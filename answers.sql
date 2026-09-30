@@ -1,8 +1,8 @@
 CREATE OR REPLACE PROCEDURE INSERT_STUDENT (
-    p_StudentID NUMBER,
-    p_StudentName VARCHAR2,
-    p_DOB DATE,
-    p_Gender VARCHAR2,
+    p_StudentID    NUMBER,
+    p_StudentName  VARCHAR2,
+    p_DOB          DATE,
+    p_Gender       VARCHAR2,
     p_DepartmentID NUMBER
 )
 IS
@@ -19,4 +19,11 @@ BEGIN
         p_StudentName,
         p_DOB,
         p_Gender,
-        p_Department
+        p_DepartmentID
+    );
+
+    COMMIT;
+
+    DBMS_OUTPUT.PUT_LINE('Student record inserted successfully');
+END;
+/
